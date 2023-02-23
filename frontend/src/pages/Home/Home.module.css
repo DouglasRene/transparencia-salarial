@@ -1,0 +1,132 @@
+.home {
+  height: 100%; 
+  /* padding-bottom: 50px; */
+  /* width: 100%; */
+}
+
+@media screen and (max-width: 700px) {
+
+  h1 {
+    font-size: 100%;
+  }
+
+  h3 {
+    font-size: 100%;
+  }
+  
+  .opcao i {
+    font-size: 400%;
+    position: relative;
+    margin-bottom: 15px;
+  }
+
+  .opcao {
+    width: 45%;
+    height: 35%;
+    margin: 70px auto;
+    /* border: 1px solid black ; */
+    box-shadow: rgba(0, 0, 0, .50) 0px -2px 3px 5px;
+    text-align: center;
+    word-break: break-word;
+    display: block;
+    position: relative;
+  }
+
+  .logo {
+    width: 30%;
+    margin-top: 0;
+    padding-top: 0;
+  }
+  
+}
+
+@media screen and (min-width: 700px) {
+
+  .opcao {
+    width: 30%;
+    height: 30%;
+    margin: 70px auto;
+    box-shadow: rgba(0, 0, 0, .50) 0px -2px 3px 5px;
+    text-align: center;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+  }
+  
+  h1 {
+    font-size: 1.8vw;
+  }
+  
+  h3 {
+    font-size: 1.4vw;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .opcao i {
+    /* font-size: 3rem; */
+    font-size: 4vw;
+    /* position: relative; */
+    margin-bottom: 35px;
+  }
+  
+.logo {
+  width: 25%;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+}
+
+.opcao:hover {
+  box-shadow: rgba(34, 102, 197, 0.5) 0px -3px 5px 8px ;
+} 
+
+/* a { display:block; position:relative; background:#ffc; width:300px; height:180px } */
+
+.opcao::before,
+.opcao::after {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  border: solid 2px rgba(34, 102, 197, 0.5);
+}
+
+.opcao::before {
+  border-left: none;
+  border-bottom: none;
+  left: 0;
+  top: 0;
+  transition: width .5s linear 1.5s, height .5s linear 1s, opacity .1s 2s
+}
+
+.opcao::after {
+  border-top: none;
+  border-right: none;
+  right: 0;
+  bottom: 0;
+  transition: width .5s linear .5s, height .5s linear, opacity .1s 1s
+}
+
+.opcao:hover::before,
+.opcao:hover::after {
+  width: 100%;
+  height: 100%;
+  opacity: 1
+}
+
+.opcao:hover::before {
+  transition: width .5s linear, height .5s linear .5s, opacity .1s
+}
+
+.opcao:hover::after {
+  transition: width .5s linear 1s, height .5s linear 1.5s, opacity .1s 1s
+}
